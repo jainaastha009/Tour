@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-underline {
+  position: relative;
+}
+
+.custom-underline::after {
+  content: '';
+  position: absolute;
+  left: 35rem; /* Default position for larger screens */
+  bottom: -12px; /* Distance from the text */
+  width: 7%;
+  height: 4px; /* Height of the underline */
+  background-color: rgb(61, 202, 160); /* Color of the underline */
+}
+
+/* Adjust for medium screens */
+@media (max-width: 1024px) { /* Tailwind's `lg` breakpoint (1024px) */
+  .custom-underline::after {
+    left: 22rem; /* Adjusted position */
+  }
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) { /* Tailwind's `md` breakpoint (768px) */
+  .custom-underline::after {
+    left: 17rem; /* Further adjusted position */
+  }
+}
+
+/* Adjust for very small screens */
+@media (max-width: 640px) { /* Tailwind's `sm` breakpoint (640px) */
+  .custom-underline::after {
+    left: 20rem; /* Further adjusted position */
+  }
+}
